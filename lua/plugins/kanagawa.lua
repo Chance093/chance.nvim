@@ -36,5 +36,6 @@ return {
     })
 
     vim.cmd("colorscheme kanagawa")
+    vim.cmd("highlight LineNr guibg=NONE")
   end,
 }

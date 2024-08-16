@@ -62,5 +62,6 @@ return {
     dashboard.section.header.val = fifth_gear_luffy
     dashboard.section.header.opts = { position = "center" }
     alpha.setup(dashboard.opts)
+    vim.keymap.set("n", "<leader>dd", ":Alpha<CR>")
   end,
 }

@@ -37,5 +37,10 @@ return {
 
     vim.cmd("colorscheme kanagawa")
     vim.cmd("highlight LineNr guibg=NONE")
+    vim.cmd("highlight LineNr guifg='#C0A36E'")
+    vim.cmd("highlight LineNrAbove guifg='#625e5a'")
+    vim.cmd("highlight LineNrBelow guifg='#625e5a'")
+
+    vim.cmd("highlight FoldColumn guibg=NONE")
   end,
 }

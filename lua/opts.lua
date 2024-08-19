@@ -28,3 +28,5 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
+vim.o.foldcolumn = "1"
+vim.o.scrolloff = 2

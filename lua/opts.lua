@@ -27,3 +27,4 @@ vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 
 vim.o.foldcolumn = "1"
+

@@ -5,6 +5,7 @@ return {
 			require("gitsigns").setup()
 
 			vim.keymap.set("n", "<leader>gh", ":Gitsigns preview_hunk<CR>", {})
+			vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", {})
 			vim.cmd("highlight SignColumn guibg=NONE")
 			vim.cmd("highlight GitSignsAdd guibg=NONE")
 			vim.cmd("highlight GitSignsChange guibg=NONE")

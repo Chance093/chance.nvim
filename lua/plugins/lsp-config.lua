@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver", "pyright" },
+				ensure_installed = { "lua_ls", "ts_ls", "pyright", "gopls" },
 			})
 		end,
 	},
@@ -17,16 +17,24 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local on_attach = require("cmp_nvim_lsp").on_attach
+
 
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.tsserver.setup({
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 			})
       lspconfig.pyright.setup({
         capabilities = capabilities,
+      })
+      lspconfig.gopls.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        cmd = {"gopls"},
+        filetypes = {"go", "gomod", "gowork", "gotmpl"},
       })
 
 			vim.api.nvim_create_autocmd("LspAttach", {
